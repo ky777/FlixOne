@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="FlixOne.InventoryManagement/FlixOne.InventoryManagement.csproj" />
+  <Project Path="FlixOne.InventoryManagementClient/FlixOne.InventoryManagementClient.csproj" Id="f2737c38-e09a-46e3-a8b3-abb0b2b44279" />
+  <Project Path="FlixOne.InventoryManagementTests/FlixOne.InventoryManagementTests.csproj" Id="005a4674-4294-4bee-a6d6-887d4dc03eed" />
+</Solution>
