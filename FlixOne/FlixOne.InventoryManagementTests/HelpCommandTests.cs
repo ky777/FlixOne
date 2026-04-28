@@ -63,5 +63,6 @@ namespace FlixOne.InventoryManagementTests
             Assert.IsFalse(result.shouldQuit, "Help is not a terminating command.");
             Assert.IsTrue(result.wasSuccessful, "Help did not complete Successfully.");
         }
+
     }
 }

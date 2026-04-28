@@ -23,7 +23,8 @@ namespace FlixOne.InventoryManagementTests
                 new List<Tuple<string, string>>(), // ReadValue()
                 new List<string> // WriteMessage()
                 {
-                    "Thank you for using FlixOne Inventory Management System"
+                    //"Thank you for using FlixOne Inventory Management System"
+                    "Спасибо за использование FlixOne Inventory Management System"
                 },
                 new List<string>() // WriteWarning()
             );
@@ -39,5 +40,6 @@ namespace FlixOne.InventoryManagementTests
             Assert.IsTrue(result.shouldQuit, "Quit is a terminating command.");
             Assert.IsTrue(result.wasSuccessful, "Quit did not complete Successfully.");
         }
+
     }
 }
