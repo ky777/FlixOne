@@ -2,17 +2,23 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using FlixOne.InventoryManagement.Repository;
 
 namespace FlixOne.InventoryManagement.Command
 {
     internal class AddInventoryCommand : NonTerminatingCommand, IParameterisedCommand
     {
+        private readonly IInventoryContext _context;
         public string InventoryName { get; private set; }
-        internal AddInventoryCommand(IUserInterface userInterface)
-            : base(userInterface: userInterface) { }
+        internal AddInventoryCommand(IUserInterface userInterface, IInventoryContext context)
+            : base(userInterface: userInterface) 
+        {
+            _context = context;
+        }
         protected override bool InternalCommand()
         {
-            throw new NotImplementedException("Будет реализовано в следующей главе!");
+            return _context.AddBook(InventoryName);
+            //throw new NotImplementedException("Будет реализовано в следующей главе!");
         }
 
         public bool GetParameters()
