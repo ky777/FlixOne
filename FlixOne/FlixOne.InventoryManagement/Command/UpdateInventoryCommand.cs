@@ -5,6 +5,7 @@ using System.Text;
 
 namespace FlixOne.InventoryManagement.Command
 {
+    /*
     internal class UpdateInventoryCommand:NonTerminatingCommand, IParameterisedCommand
     {
         internal UpdateInventoryCommand(IUserInterface userInterface)
@@ -18,5 +19,5 @@ namespace FlixOne.InventoryManagement.Command
         {
             throw new NotImplementedException();
         }
-    }
+    }*/
 }
