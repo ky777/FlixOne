@@ -1,4 +1,5 @@
-﻿using FlixOne.InventoryManagement.UserInterface;
+﻿using FlixOne.InventoryManagement.Repository;
+using FlixOne.InventoryManagement.UserInterface;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,11 +8,19 @@ namespace FlixOne.InventoryManagement.Command
 {
     internal class GetInventoryCommand:NonTerminatingCommand
     {
-        internal GetInventoryCommand(IUserInterface userInterface):base(userInterface: userInterface) { }
-
+        private readonly IInventoryContext _context;
+        internal GetInventoryCommand(IUserInterface userInterface, IInventoryContext context)
+            : base(userInterface)
+        {
+            _context = context;
+        }
         protected override bool InternalCommand()
         {
-            throw new NotImplementedException("Будет реализовано в следующей главе!");
+            foreach (var book in _context.GetBooks())
+            {
+                Interface.WriteMessage($"{book.Name,-30}\tQuantity:{book.Quantity}");
+            }
+            return true;
         }
     }
 }
